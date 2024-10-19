@@ -35,10 +35,10 @@ def handle_contractions(text):
 
 
 # Pard D
-words_ar = handle_contractions(' '.join(word_count('/home/data/AlwaysRememberUsThisWay.txt')))
-total_words_ar = len(words_ar.split())
-word_freq_ar = Counter(words_ar.split())
-top_3_ar = word_freq_ar.most_common(3)
+words = handle_contractions(' '.join(word_count('/home/data/AlwaysRememberUsThisWay.txt')))
+total_words = len(words.split())
+word_freq = Counter(words.split())
+top_3 = word_freq.most_common(3)
 
 # Part E
 ip_address = socket.gethostbyname(socket.gethostname())
@@ -50,8 +50,8 @@ os.makedirs(os.path.dirname(output_path), exist_ok=True)
 with open(output_path, 'w') as f:
     f.write(f"Total words in IF.txt: {total_words_if}\n")
     f.write(f"Top 3 words in IF.txt: {top_3_if}\n")
-    f.write(f"Total words in AlwaysRememberUsThisWay.txt: {total_words_ar}\n")
-    f.write(f"Top 3 words in AlwaysRememberUsThisWay.txt: {top_3_ar}\n")
+    f.write(f"Total words in AlwaysRememberUsThisWay.txt: {total_words}\n")
+    f.write(f"Top 3 words in AlwaysRememberUsThisWay.txt: {top_3}\n")
     f.write(f"Container IP Address: {ip_address}\n")
 
 # Print result to console
